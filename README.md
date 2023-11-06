@@ -59,7 +59,7 @@ pg.connect(postgres://postgre@db/postgres" , function(err, client, done) {
     }
     callback(err, client);
     });
----------------------------------------------============>>>>>>>>>db container result app iletişimi eşleşme sağlanmalı 
+----------------------------------------------============>>>>>>>>>db container result app iletişimi eşleşme sağlanmalı 
 
 try {
   Jedis redis = connectToRedis("redis");
