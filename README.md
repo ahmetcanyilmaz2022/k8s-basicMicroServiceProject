@@ -1,6 +1,11 @@
 # k8s-basicMicroServiceProject
 mikroservisi anlama adına basit uygulama 
 
+#TEMEL KAVRAMA AÇISINDAN FAYDALI OLACAKTIR 
+
+![image](https://github.com/ahmetcanyilmaz2022/k8s-basicMicroServiceProject/assets/121444420/f8e1a123-4c55-4cb8-9095-d09bdf1f8edf)
+
+
 web application. We will then try and deploy this web application on multiple
 different kubernetes platforms.
 
@@ -28,8 +33,54 @@ traffic to underlying nodes and then through to PODs to serve the users.
 ![image](https://github.com/ahmetcanyilmaz2022/k8s-basicMicroServiceProject/assets/121444420/2217fe60-cccd-4e12-ac8b-8a85cfcfb3e4)
 
 
+
+
+
+
+DOCKER COMMAND WİTH İMPERATİVE METHOD  
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+voting-app
+------------------------------------------
+def get_resis():
+    if not hassattr(g, 2redis2):
+      g.redis = Redis(host="redis", db=0, socket_timeout=5)
+    return g.redis
+-------------------------------------------    =======>>>>>>>>>>redis konteyner eşleşme sağlanmalı
+pg.connect(postgres://postgre@db/postgres" , function(err, client, done) {
+    if (err) {
+      console.error("Waiting for db");
+    }
+    callback(err, client);
+    });
+---------------------------------------------============>>>>>>>>>db container result app iletişimi eşleşme sağlanmalı 
+
+try {
+  Jedis redis = connectToRedis("redis");
+  Connection dbConn = connectToDB("DB");
+
+  System.err.printin("Waching vote queu");
+------------------------------------------==========>>>>>> postgre db ve redis in worker ile ara bağlamının sağlanması 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
 ***imperative command:
 
+docker run --links
 
+docker run -d --name=redis postgres:9.4
+
+docker run -d --name=vote -p 5000:80 --link redis:redis voting-app     # --link redis:redis voting app uygulamayı redis konteynera bğlama amaç 
+
+docker run -d --name=result -p 5001:80 --iink db:db result-app          # --link db:db db ile result app bağlantısını amaç.lar 
+
+docker run -d --name=worker --link redis:redis worker                   # --link redis:redis worker redis iletiğimi sağlandı  
 
 
