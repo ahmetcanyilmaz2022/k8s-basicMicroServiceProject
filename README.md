@@ -99,7 +99,7 @@ docker run --links
 
 docker run -d --name=redis redis       port =6379
 
-docker run -d --name=redis postgres:9.4         PORT =5332
+docker run -d --name=redis postgres:9.4         PORT =5432
 
 docker run -d --name=vote -p 5000:80 --link redis:redis voting-app     # --link redis:redis voting app uygulamayı redis konteynera bğlama amaç    PORT = 80
 
