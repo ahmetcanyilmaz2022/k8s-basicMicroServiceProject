@@ -32,6 +32,10 @@ traffic to underlying nodes and then through to PODs to serve the users.
 
 ![image](https://github.com/ahmetcanyilmaz2022/k8s-basicMicroServiceProject/assets/121444420/2217fe60-cccd-4e12-ac8b-8a85cfcfb3e4)
 
+k8s STEPS:
+1 dEPLOY PODS
+2 ENABLE CONNECTIVTY
+3 EXTERNAL ACCESS
 
 
 
@@ -44,7 +48,7 @@ DOCKER COMMAND WİTH İMPERATİVE METHOD
 --------------------------------------------------------------------------------------------------------------------------------------------------
 voting-app
 ------------------------------------------
-def get_resis():
+def get_reDis():
     if not hassattr(g, 2redis2):
       g.redis = Redis(host="redis", db=0, socket_timeout=5)
     return g.redis
@@ -74,12 +78,15 @@ try {
 ***imperative command:
 
 docker run --links
+-----
 
-docker run -d --name=redis postgres:9.4
+docker run -d --name=redis redis       port =6379
 
-docker run -d --name=vote -p 5000:80 --link redis:redis voting-app     # --link redis:redis voting app uygulamayı redis konteynera bğlama amaç 
+docker run -d --name=redis postgres:9.4         PORT =5332
 
-docker run -d --name=result -p 5001:80 --iink db:db result-app          # --link db:db db ile result app bağlantısını amaç.lar 
+docker run -d --name=vote -p 5000:80 --link redis:redis voting-app     # --link redis:redis voting app uygulamayı redis konteynera bğlama amaç    PORT = 80
+
+docker run -d --name=result -p 5001:80 --iink db:db result-app          # --link db:db db ile result app bağlantısını amaç.lar       PORT =80
 
 docker run -d --name=worker --link redis:redis worker                   # --link redis:redis worker redis iletiğimi sağlandı  
 
