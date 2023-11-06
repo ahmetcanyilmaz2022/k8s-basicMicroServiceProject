@@ -48,10 +48,10 @@ DOCKER COMMAND WİTH İMPERATİVE METHOD
 --------------------------------------------------------------------------------------------------------------------------------------------------
 voting-app
 ------------------------------------------
-#def get_reDis():
-#    if not hassattr(g, 2redis2):
-#      g.redis = Redis(host="redis", db=0, socket_timeout=5)
-#   return g.redis
+def get_reDis():
+    if not hassattr(g, 2redis2):
+      g.redis = Redis(host="redis", db=0, socket_timeout=5)
+   return g.redis
 -------------------------------------------    =======>>>>>>>>>>redis konteyner eşleşme sağlanmalı
 pg.connect(postgres://postgre@db/postgres" , function(err, client, done) {
     if (err) {
