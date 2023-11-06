@@ -34,8 +34,25 @@ traffic to underlying nodes and then through to PODs to serve the users.
 
 k8s STEPS:
 1 dEPLOY PODS
-2 ENABLE CONNECTIVTY
-3 EXTERNAL ACCESS
+2  CREATE CLUSTER IP SERVİCES 
+REDİS DB
+3 CRETAE NODEPORT DERVİCES
+VOTİNG-APP
+RESULT-APP
+
+
+#POD İMAGE:result-app
+kodekloud/examplevotingapp_result:v1
+
+#POD İMAGE : worker
+kodekloud/examplevotingapp_worker:v1
+
+#POD İMAGE : voting-app 
+kodekloud/examplevotingapp_vote:v1
+
+
+
+
 
 
 
